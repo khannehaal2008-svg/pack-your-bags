@@ -191,8 +191,8 @@ function creatorApp(){
 }
 
 /* ---------- RECEIVER ---------- */
-const EX=['Maybe later','I’m busy','Not now','Let me think','Next time','Nope'];
-const LINES=['Aww, are you sure? I made this with my whole heart 🥺','Think of the snacks. I’ll carry every single one 🍫','I’m melting like butter over here… please? 🧈','I’ll be extra smooth, I promise. Like butter. Just say yes 🧈💛','The Excuse button is getting nervous. Look at it shrink…','Okay, it gave up. Only one door left 🚪💖'];
+const EX=['Maybe later','Let me think…','I’m not sure','Ask me tomorrow','Too tempting…','Okay, okay…'];
+const LINES=['Hold on… did you just say maybe? 🥺','I already packed a tiny bag for us 🎒','Look at that Yes button. It’s so hopeful 🌟','It’s growing, it’s glowing, it’s basically begging now ✨','The Maybe button is running out of excuses… 🫣','Fine, it surrendered. Only one door left 🚪💖'];
 function confetti(n=40,set=['🎉','✨','💛','🧡','🎊','💖']){for(let i=0;i<n;i++){const c=document.createElement('div');c.className='cf';c.textContent=set[i%set.length];c.style.left=Math.random()*100+'vw';c.style.animationDuration=(2.5+Math.random()*3)+'s';c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),7500);}}
 let pick=null,when='';
 function play(cfg,preview){
@@ -247,8 +247,8 @@ function thanks(cfg){
  document.body.classList.remove('dark');vibe(V[pick[1]]||V.sunset);
  go(`${F('The end, sort of','05 / 05')}<span class="big">💌</span><h1>${W(cfg.t?'Thank you, *'+cl(cfg.t)+'.*':'*Thank you.*')}</h1>
  <p class="fx" style="--d:.9s;font-size:24px">For saying yes, for choosing the day, and for being you. ${cfg.f?esc(cfg.f)+' is':'I’m'} already counting the sleeps until <i>${esc(when)}</i>.</p>
- <button class="btn acc fx" style="--d:1.3s" id="tell">Tell ${cfg.f?esc(cfg.f):'them'} ${cfg.w?'on WhatsApp ':''}💬</button>
- ${cfg.w?'<button class="btn sm fx" style="--d:1.5s;margin-top:14px" id="alt">Share another way</button>':''}`,s=>{
+ <div class="fx" style="--d:1.3s"><button class="btn acc" id="tell">Tell ${cfg.f?esc(cfg.f):'them'} ${cfg.w?'on WhatsApp ':''}💬</button></div>
+ ${cfg.w?'<div class="fx" style="--d:1.5s;margin-top:14px"><button class="btn sm" id="alt">Share another way</button></div>':''}`,s=>{
   const rl=location.href.split('#')[0]+'#'+enc('a|'+pick[0].replace(/\|/g,'')+'|'+when+'|'+(cfg.t||''));const txt=`Yes! ${cfg.t||'I'} picked ${pick[0]} on ${when} 💖\n${rl}`;
   const share=async e=>{
    try{if(navigator.share){await navigator.share({text:txt});return;}}catch(x){}
@@ -259,7 +259,7 @@ function thanks(cfg){
 
 function answer(c){
  document.body.classList.remove('dark');vibe(V[detect(c.p)]);
- go(`${F('A reply just arrived','✓')}<span class="big">💌</span><h1>${W('They said *yes!*')}</h1><p class="fx" style="--d:.8s;font-size:24px">${c.t?esc(c.t)+' picked':'Picked'} <i>${esc(c.p)}</i> on <i>${esc(c.d)}</i>. Start packing.</p><button class="btn acc fx" style="--d:1.2s" id="mk">Make another invite</button>`,s=>{confetti(60);s.querySelector('#mk').onclick=()=>{try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}creator();};});
+ go(`${F('A reply just arrived','✓')}<span class="big">💌</span><h1>${W('They said *yes!*')}</h1><p class="fx" style="--d:.8s;font-size:24px">${c.t?esc(c.t)+' picked':'Picked'} <i>${esc(c.p)}</i> on <i>${esc(c.d)}</i>. Start packing.</p><div class="fx" style="--d:1.2s"><button class="btn acc" id="mk">Make another invite</button></div>`,s=>{confetti(60);s.querySelector('#mk').onclick=()=>{try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}creator();};});
 }
 /* ---------- boot ---------- */
 function boot(){const t=location.hash.slice(1),c=t&&dec(t);
