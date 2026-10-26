@@ -240,7 +240,7 @@ function dates(cfg){
   lk.onclick=()=>yay(cfg);});
 }
 async function yay(cfg){
- await go('');app.innerHTML='';document.body.classList.add('dark');
+ await go('');app.innerHTML='';document.body.classList.add('dark');vibe({bg:'#000',c:['#000','#000','#000']});
  go(`<span class="big">🎉</span><h1 style="font-size:clamp(70px,22vw,140px)">${W('Yay!')}</h1><h2>${W('So *'+when+'* it is.')}</h2><p class="fx" style="--d:1.3s;color:#aaa">${esc(pick[0])}, here we come.</p>`,()=>{confetti(70);setTimeout(()=>thanks(cfg),5400);});
 }
 function thanks(cfg){
