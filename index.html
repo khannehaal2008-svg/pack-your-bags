@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pack your bags</title>
+<meta name="description" content="Someone planned a trip for you. Open to answer."><meta property="og:title" content="Pack your bags"><meta property="og:description" content="Someone planned a trip for you. Open to answer."><meta name="theme-color" content="#f7f6f2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1a18;--mut:#6b655b;--acc:#6a35e8;--red:#c8341f;--ease:cubic-bezier(.22,1,.36,1);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;font-family:'Instrument Serif',Georgia,serif;font-size:21px;color:var(--ink);background-color:#f7f6f2;transition:background-color 1.4s var(--ease),color .9s var(--ease);overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9;opacity:.32;mix-blend-mode:multiply;transition:opacity 1s;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .38 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+body.dark{background-color:#000;color:#f4efe6}
+body.dark::after{opacity:0}
+.blobs{position:fixed;inset:0;pointer-events:none;overflow:hidden;transition:opacity 1s}
+body.dark .blobs{opacity:0}
+.blobs i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;transition:background-color 1.6s var(--ease);animation:fl 18s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:60vmax;height:60vmax;left:-20vmax;top:-20vmax}
+.blobs i:nth-child(2){width:50vmax;height:50vmax;right:-18vmax;top:25%;animation-delay:-6s}
+.blobs i:nth-child(3){width:55vmax;height:55vmax;left:15%;bottom:-30vmax;animation-delay:-12s}
+@keyframes fl{to{transform:translate(6vmax,4vmax) scale(1.12)}}
+main{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 20px}
+.scr{width:100%;max-width:540px;text-align:center;animation:in .8s var(--ease) both}
+.scr.out{animation:out .45s ease forwards}
+@keyframes in{from{opacity:0;transform:translateY(24px) scale(.98)}}
+@keyframes out{to{opacity:0;transform:translateY(-16px) scale(.98)}}
+.fx{opacity:0;transform:translateY(14px);animation:fx .9s var(--ease) var(--d,0s) forwards}
+@keyframes fx{to{opacity:1;transform:none}}
+.mono,label,.folio,.opt small{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.folio{display:flex;justify-content:space-between;color:var(--mut);padding-bottom:8px;border-bottom:1px dashed rgba(0,0,0,.35);margin-bottom:36px}
+h1,h2{font-weight:400;letter-spacing:-.01em;line-height:1.02;margin:0 0 18px}
+h1{font-size:clamp(48px,13vw,78px)}h2{font-size:clamp(40px,10.5vw,60px)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}
+.w>span{display:inline-block;transform:translateY(115%);animation:up .95s var(--ease) var(--d) forwards}
+@keyframes up{to{transform:none}}
+.hl{display:inline-block;padding:0 .16em .05em;margin:.03em .02em;transform:rotate(-1.2deg);clip-path:inset(0 100% 0 0);animation:wipe .9s var(--ease) var(--d) forwards}
+@keyframes wipe{to{clip-path:inset(0 0 0 0)}}
+.red{background:var(--red);color:#fff;font-style:italic}
+body.dark .hl.red{background:#e0402a}
+p{color:var(--mut);line-height:1.3;font-size:22px;margin:0 0 24px}
+p i{color:var(--ink)}
+.hand{font-family:'Caveat','Segoe Script',cursive;font-weight:700;color:var(--acc);font-size:28px;display:inline-block;transform:rotate(-3deg)}
+/* liquid glass */
+.glass,.btn,.card,.opt,.dv{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.3),rgba(255,255,255,.06));backdrop-filter:blur(10px) saturate(1.5);-webkit-backdrop-filter:blur(10px) saturate(1.5);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -10px 22px rgba(255,255,255,.1),0 22px 46px -24px rgba(30,20,10,.28)}
+.glass::before,.btn::before,.card::before,.opt::before{content:'';position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(190px circle at var(--mx,30%) var(--my,0%),rgba(255,255,255,.75),transparent 62%);transition:opacity .4s}
+.card{border-radius:30px;padding:22px;text-align:left}
+label{display:block;color:var(--mut);margin:16px 0 6px}label:first-child{margin-top:0}
+input{width:100%;font-family:'Instrument Serif',Georgia,serif;font-size:21px;color:var(--ink);background:rgba(255,255,255,.5);border:1px solid rgba(0,0,0,.14);border-radius:16px;padding:11px 14px;outline:none;transition:border-color .3s,box-shadow .3s,background .3s}
+input:focus{border-color:var(--acc);background:rgba(255,255,255,.8);box-shadow:0 0 0 4px rgba(106,53,232,.15)}
+.row{display:flex;gap:8px;margin-bottom:8px;align-items:center}
+.dv{width:50px;height:50px;flex:none;display:grid;place-items:center;font-size:25px;border-radius:50%}
+.dv.pop{animation:pop .6s var(--ease)}@keyframes pop{40%{transform:scale(1.35) rotate(-8deg)}}
+.btn{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:25px;color:var(--ink);border-radius:999px;padding:12px 30px;cursor:pointer;animation:liquid 7s ease-in-out infinite;transition:transform .5s var(--ease),box-shadow .5s,opacity .5s,background .4s}
+@keyframes liquid{50%{border-radius:48px 70px 52px 66px/62px 46px 68px 50px}}
+.btn:hover{transform:translateY(-3px) scale(1.04)}.btn:active{transform:scale(.95)}
+.btn.acc{background:linear-gradient(135deg,rgba(214,60,38,.95),rgba(160,28,18,.9));color:#fff;border-color:rgba(255,255,255,.4)}
+.btn.sm{font-size:18px;padding:8px 20px}
+.res{margin-top:18px;animation:fx .8s var(--ease) both}.res input{font-family:'JetBrains Mono',monospace;font-size:12px}
+.btns{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:6px;min-height:150px;justify-content:center}
+#yes{transition:font-size .9s var(--ease),padding .9s var(--ease),transform .5s var(--ease);max-width:100%;white-space:normal;line-height:1}
+#yes.pulse{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.05)}}
+#no{transition:transform .8s var(--ease),opacity .8s var(--ease)}#no.gone{transform:scale(0);opacity:0;pointer-events:none}
+.butter{display:inline-block;padding:4px 16px 8px;background:#ffe27a;color:#4d3600;font-family:'Caveat','Segoe Script',cursive;font-weight:700;font-size:27px;line-height:1.1;transform:rotate(-1deg);box-shadow:0 10px 26px -14px #c99a00;animation:melt .9s var(--ease) both}
+@keyframes melt{from{opacity:0;transform:translateY(-14px) scaleY(.6);filter:blur(6px)}}
+.big{font-size:clamp(64px,22vw,110px);display:block;margin-bottom:6px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(-4deg)}}
+.opts{display:grid;gap:12px;margin:8px 0 28px}
+.opt{display:flex;align-items:center;gap:14px;text-align:left;font-family:'Instrument Serif',Georgia,serif;font-size:30px;line-height:1;color:var(--ink);border-radius:26px;padding:16px 20px;cursor:pointer;transition:transform .5s var(--ease),border-color .4s,box-shadow .5s}
+.opt:hover{transform:translateX(6px)}
+.opt.sel{border-color:var(--ink);transform:scale(1.025)}
+.opt .num{font-size:38px;color:var(--acc);width:48px}
+.opt small{display:block;margin-top:6px;color:var(--mut)}
+.hide{opacity:0;pointer-events:none;transform:translateY(10px)}.show{opacity:1;transform:none}
+.cf{position:fixed;top:-40px;pointer-events:none;font-size:26px;animation:fall linear forwards;z-index:2}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.exit{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:12px;z-index:10}
+</style>
+</head>
+<body>
+<div class="blobs"><i></i><i></i><i></i></div>
+<main id="app"></main>
+<script>
+const V={
+beach:{e:'🏖️',n:'Beach',bg:'#eef4f2',c:['#7fd6d8','#ffe0a0','#a9e0ef']},
+mountain:{e:'🏔️',n:'Mountains',bg:'#eff1f4',c:['#9db6d6','#cfdcea','#b9c4e2']},
+
+forest:{e:'🌲',n:'Forest',bg:'#eff4ec',c:['#8fcf8e','#d0e8a8','#9adcbc']},
+desert:{e:'🏜️',n:'Desert',bg:'#f6f0e4',c:['#f0ad62','#f8d492','#f2b27a']},
+snow:{e:'❄️',n:'Snow',bg:'#f2f6f9',c:['#b5daf3','#dce9f7','#c6d2fc']},
+
+cafe:{e:'☕',n:'Cosy café',bg:'#f4eee6',c:['#d4a97f','#e8cba8','#c29769']},
+};
+const NEUTRAL={bg:'#f7f6f2',c:['#d9e4f5','#fbefcf','#dcebe0']};
+const KW=[['snow','snow|ski|gulmarg|iceland|norway|finland|lapland|alaska|arctic|aspen|kashmir|auli|sweden|canada|winter'],['mountain','manali|mountain|himal|alps|swiss|switzerland|everest|nepal|ladakh|leh|shimla|darjeeling|ooty|munnar|kasol|spiti|dolomites|andes|peak|trek|nainital|mussoorie|coorg|kedarnath|hill'],['beach','goa|beach|bali|maldives|phuket|island|coast|cancun|ibiza|miami|hawaii|seychelles|andaman|kovalam|gokarna|ocean|lakshadweep|pattaya|malibu|krabi|zanzibar|mauritius|varkala'],['desert','desert|jaisalmer|dubai|rajasthan|sahara|jodhpur|pushkar|sand|morocco|egypt|abu dhabi|petra|arizona|bikaner|marrakech|namibia|jordan'],['forest','forest|jungle|safari|corbett|amazon|wayanad|kerala|nature|camp|national park|rainforest|costa rica|kabini|thekkady|woods|sundarbans'],['cafe','cafe|café|coffee|pondicherry|puducherry|kyoto|brunch|bakery|date night|lunch|dinner|restaurant|cinema|movie|paris|venice|rome|santorini|udaipur|romantic|honeymoon|italy|verona|prague|vienna|florence|taj|agra|bruges|love|city|tokyo|new york|nyc|london|mumbai|delhi|singapore|bangkok|hong kong|seoul|berlin|vegas|barcelona|istanbul|shanghai|bombay|bangalore|bengaluru|kolkata|chicago|osaka|los angeles|hyderabad|pune|jaipur|sunset|sunrise|cruise|yacht|rooftop|lake|dusk'],];
+function detect(n){n=(n||'').toLowerCase();for(const[k,p]of KW)if(new RegExp('\\b('+p+')').test(n))return k;let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))>>>0;const ks=Object.keys(V);return ks[h%ks.length];}
+const app=document.getElementById('app'),bl=[...document.querySelectorAll('.blobs i')];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cl=s=>String(s).replace(/[*_=]/g,'');
+/* *red block*  words reveal; marks are text backgrounds */
+const W=s=>{let i=0;return esc(s).replace(/(\*)(.+?)\1|([^\s*]+)/g,(m,k,t,w)=>{const d=`--d:${(i++)*70}ms`;return k?`<span class="hl red" style="${d}">${t}</span>`:`<span class="w"><span style="${d}">${w}</span></span>`;});};
+const F=(a,b)=>`<div class="folio fx"><span>${esc(a)}</span><span>${b}</span></div>`;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function vibe(v){const x=v||NEUTRAL;document.body.style.backgroundColor=x.bg;bl.forEach((b,i)=>b.style.backgroundColor=x.c[i]);}
+app.addEventListener('pointermove',e=>{const g=e.target.closest&&e.target.closest('.glass,.btn,.card,.opt');if(g){const r=g.getBoundingClientRect();g.style.setProperty('--mx',e.clientX-r.left+'px');g.style.setProperty('--my',e.clientY-r.top+'px');}});
+async function go(html,bind){const o=app.firstElementChild;if(o){o.classList.add('out');await sleep(430);}
+ app.innerHTML=`<div class="scr">${html}</div>`;window.scrollTo(0,0);bind&&bind(app.firstElementChild);}
+const enc=o=>btoa(unescape(encodeURIComponent(typeof o=='string'?o:JSON.stringify(o)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const dec=t=>{try{t=t.replace(/-/g,'+').replace(/_/g,'/');while(t.length%4)t+='=';const x=decodeURIComponent(escape(atob(t)));if(x[0]=='{')return JSON.parse(x);const p=x.split('|');if(p[0]=='v2')return{o:p.slice(1).map(n=>[n])};if(p[0]=='a')return{a:1,p:p[1],d:p[2],t:p[3]};return null;}catch(e){return null}};
+
+
+/* ---------- LICENSE GATE ---------- */
+/* Paste your Gumroad product page link between the quotes to show a "Get a key" button. */
+const GUMROAD_URL='';
+const LK='pyb_license';
+const store={get(){try{return localStorage.getItem(LK)}catch(e){return null}},set(v){try{localStorage.setItem(LK,v)}catch(e){}},del(){try{localStorage.removeItem(LK)}catch(e){}}};
+async function verifyKey(key,first){
+ const r=await fetch('/.netlify/functions/verify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,first})});
+ return r.json();
+}
+function creator(){
+ const k=store.get();
+ if(k){
+  creatorApp();
+  verifyKey(k,false).then(r=>{if(r&&r.ok===false&&r.invalid){store.del();gate('Your key is no longer valid.');}}).catch(()=>{});
+ }else gate();
+}
+function gate(msg){
+ vibe(NEUTRAL);document.body.classList.remove('dark');
+ go(`${F('Members only','🔒')}<h1>${W('Enter your *key.*')}</h1>
+ <p class="fx" style="--d:.6s">Paste the license key from your Gumroad receipt email.</p>
+ <div class="card fx" style="--d:.8s"><label>License key</label>
+ <input id="key" placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX" autocomplete="off" autocapitalize="characters" spellcheck="false">
+ <div style="text-align:center;margin-top:22px"><button class="btn acc" id="unlock">Unlock ✨</button></div>
+ <div id="gmsg">${msg?`<p class="res" style="margin:16px 0 0;color:#c2410c;font-size:20px;text-align:center">${esc(msg)}</p>`:''}</div>
+ ${GUMROAD_URL?`<div style="text-align:center;margin-top:16px"><a class="btn sm" href="${esc(GUMROAD_URL)}" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">Get a key</a></div>`:''}</div>`,s=>{
+  const inp=s.querySelector('#key'),btn=s.querySelector('#unlock'),m=s.querySelector('#gmsg');
+  const say=t=>m.innerHTML=`<p class="res" style="margin:16px 0 0;color:#c2410c;font-size:20px;text-align:center">${esc(t)}</p>`;
+  const run=async()=>{
+   const key=inp.value.trim();if(!key){say('Paste your key first.');return;}
+   btn.textContent='Checking…';btn.disabled=true;
+   try{
+    const r=await verifyKey(key,true);
+    if(r.ok){store.set(key);creatorApp();return;}
+    say(r.error||'That key did not work.');
+   }catch(e){say('Could not reach the server. Check your connection and try again.');}
+   btn.textContent='Unlock ✨';btn.disabled=false;
+  };
+  btn.onclick=run;inp.onkeydown=e=>{if(e.key==='Enter')run();};
+ });
+}
+
+/* ---------- CREATOR ---------- */
+let draft={o:[['Goa'],['Manali'],['Paris']]};
+function creatorApp(){
+ vibe(NEUTRAL);document.body.classList.remove('dark');
+ const rows=()=>draft.o.map((o,i)=>`<div class="row"><input data-n="${i}" value="${esc(o[0])}" placeholder="Type a place, e.g. Goa" maxlength="40"></div>`).join('');
+ go(`${F('Trip invite maker','01')}<h1>${W('Plan a trip, send a *yes-please.*')}</h1>
+ <p class="fx" style="--d:.6s">Just add the places. The vibe of each one is detected for you.</p>
+ <div class="card fx" style="--d:.8s">
+ 
+ 
+ 
+ 
+ <label>Where could we go?</label><div id="rows">${rows()}</div>
+ <button class="btn sm" id="add">+ Add place</button>
+ <div style="text-align:center;margin-top:24px"><button class="btn acc" id="gen">Generate link ✨</button></div>
+ <div id="res"></div></div>`,s=>{
+  const sync=()=>{
+   s.querySelectorAll('[data-n]').forEach(e=>draft.o[+e.dataset.n][0]=e.value);
+   draft.o.forEach(o=>o[1]=detect(o[0]));};
+  
+  s.querySelector('#add').onclick=()=>{sync();if(draft.o.length<6){draft.o.push(['']);s.querySelector('#rows').innerHTML=rows();}};
+  s.querySelector('#gen').onclick=()=>{sync();
+   const o=draft.o.filter(x=>x[0].trim());
+   if(o.length<1){s.querySelector('#res').innerHTML='<p class="res" style="margin:16px 0 0;color:#c2410c">Add at least one place.</p>';return;}
+   const cfg={o:o.map(x=>[x[0].trim()])};
+   const base=location.href.split('#')[0],tok=enc('v2|'+cfg.o.map(x=>x[0].replace(/\|/g,'')).join('|'));
+   s.querySelector('#res').innerHTML=`<div class="res"><label>Your link</label><input id="lk" readonly value="${base}#${tok}">
+   <div style="display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap"><button class="btn sm acc" id="cp">Copy link</button><button class="btn sm" id="pv">Preview</button></div>
+   <p style="font-size:20px;margin:14px 0 0">Vibes detected: ${cfg.o.map(x=>V[detect(x[0])].e+' '+esc(x[0])).join(' · ')}</p></div>`;
+   const lk=s.querySelector('#lk');lk.onclick=()=>lk.select();
+   s.querySelector('#cp').onclick=async e=>{try{await navigator.clipboard.writeText(lk.value);}catch(x){lk.select();document.execCommand('copy');}e.target.textContent='Copied ✓';setTimeout(()=>e.target.textContent='Copy link',1800);};
+   s.querySelector('#pv').onclick=()=>play(cfg,true);
+  };});
+}
+
+/* ---------- RECEIVER ---------- */
+const EX=['Maybe later','I’m busy','Not now','Let me think','Next time','Nope'];
+const LINES=['Aww, are you sure? I made this with my whole heart 🥺','Think of the snacks. I’ll carry every single one 🍫','I’m melting like butter over here… please? 🧈','I’ll be extra smooth, I promise. Like butter. Just say yes 🧈💛','The Excuse button is getting nervous. Look at it shrink…','Okay, it gave up. Only one door left 🚪💖'];
+function confetti(n=40,set=['🎉','✨','💛','🧡','🎊','💖']){for(let i=0;i<n;i++){const c=document.createElement('div');c.className='cf';c.textContent=set[i%set.length];c.style.left=Math.random()*100+'vw';c.style.animationDuration=(2.5+Math.random()*3)+'s';c.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),7500);}}
+let pick=null,when='';
+function play(cfg,preview){
+ vibe(NEUTRAL);document.body.classList.remove('dark');
+ document.querySelectorAll('.exit').forEach(e=>e.remove());
+ if(preview){const b=document.createElement('button');b.className='btn sm exit';b.textContent='× Exit preview';b.onclick=()=>{b.remove();creator();};document.body.appendChild(b);}
+ invite(cfg);
+}
+function invite(cfg){
+ go(`${F('An invitation','01 / 05')}<h1>${W((cfg.t?cl(cfg.t)+', you’re my favourite person. ':'You’re my favourite person. ')+'*Run away with me?*')}</h1>
+ <p class="fx" style="--d:.7s"><i>${esc(cfg.n||'I planned something special, just for us.')}</i>${cfg.m?'<br>'+esc(cfg.m):''}</p>
+ <span class="hand fx" style="--d:1s">psst, say yes ↓</span>
+ <div class="btns fx" style="--d:1.1s"><button class="btn acc" id="yes">Yes, let’s go 💖</button><button class="btn" id="no">${EX[0]}</button></div>
+ <div id="say" style="min-height:80px;margin-top:10px"></div>`,s=>{
+  let n=0;const yes=s.querySelector('#yes'),no=s.querySelector('#no'),say=s.querySelector('#say');
+  no.onclick=()=>{n++;
+   yes.style.fontSize=`min(${25+n*8}px,${11+n*2}vw)`;yes.style.padding=`${12+n*6}px ${30+n*10}px`;
+   say.innerHTML=`<span class="butter">${LINES[n-1]}</span>`;
+   if(n>=4)yes.classList.add('pulse');
+   if(n>=6){no.classList.add('gone');setTimeout(()=>no.remove(),900);}
+   else{no.textContent=EX[n];no.style.transform=`scale(${1-n*.12})`;no.style.opacity=1-n*.1;}
+  };
+  yes.onclick=()=>happy(cfg);});
+}
+function happy(cfg){
+ go(`<span class="big">🥹</span><h1>${W('*YAYYY!* You said yes!')}</h1><p class="fx" style="--d:.8s">You just made ${cfg.f?esc(cfg.f)+'’s':'my'} whole year. Now, let’s pick the place…</p>`,()=>{confetti(60);setTimeout(()=>places(cfg),3400);});
+}
+function places(cfg){
+ go(`${F('Step one of two','03 / 05')}<h2>${W('Where shall we *go?*')}</h2>
+ <div class="opts">${cfg.o.map((o,i)=>{const v=V[detect(o[0])];return `<button class="opt fx" style="--d:${.5+i*.12}s" data-i="${i}"><span class="num">${String(i+1).padStart(2,'0')}</span><span>${esc(o[0])}</span></button>`}).join('')}</div>
+ <button class="btn acc hide" id="nx" style="transition:all .7s var(--ease)">Next →</button>`,s=>{
+  const nx=s.querySelector('#nx');
+  s.querySelectorAll('.opt').forEach(b=>{
+   b.onmouseenter=()=>{if(!pick&&matchMedia('(hover:hover)').matches)vibe(V[detect(cfg.o[b.dataset.i][0])])};
+   b.onclick=()=>{pick=cfg.o[b.dataset.i];pick[1]=detect(pick[0]);vibe(V[pick[1]]);s.querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b));nx.classList.replace('hide','show');};});
+  nx.onclick=()=>dates(cfg);});
+}
+function dates(cfg){
+ const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+ go(`${F('Step two of two','04 / 05')}<h2>${W('So, when should *we go?*')}</h2><p class="fx" style="--d:.6s">${esc(pick[0])} sounds perfect. <span class="hand">pick the day ↓</span></p>
+ <div class="card fx" style="--d:.8s"><input type="date" id="dt" min="${today.toISOString().slice(0,10)}" style="text-align:center;font-size:24px"></div>
+ <div style="margin-top:26px"><button class="btn acc hide" id="lock" style="transition:all .7s var(--ease)">Lock it in 🔒</button></div>`,s=>{
+  const dt=s.querySelector('#dt'),lk=s.querySelector('#lock');
+  dt.onchange=()=>{if(dt.value){const[y,m,d]=dt.value.split('-');when=new Date(y,m-1,d).toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'});lk.classList.replace('hide','show');}else lk.classList.replace('show','hide');};
+  lk.onclick=()=>yay(cfg);});
+}
+async function yay(cfg){
+ await go('');app.innerHTML='';document.body.classList.add('dark');
+ go(`<span class="big">🎉</span><h1 style="font-size:clamp(70px,22vw,140px)">${W('Yay!')}</h1><h2>${W('So *'+when+'* it is.')}</h2><p class="fx" style="--d:1.3s;color:#aaa">${esc(pick[0])}, here we come.</p>`,()=>{confetti(70);setTimeout(()=>thanks(cfg),5400);});
+}
+function thanks(cfg){
+ document.body.classList.remove('dark');vibe(V[pick[1]]||V.sunset);
+ go(`${F('The end, sort of','05 / 05')}<span class="big">💌</span><h1>${W(cfg.t?'Thank you, *'+cl(cfg.t)+'.*':'*Thank you.*')}</h1>
+ <p class="fx" style="--d:.9s;font-size:24px">For saying yes, for choosing the day, and for being you. ${cfg.f?esc(cfg.f)+' is':'I’m'} already counting the sleeps until <i>${esc(when)}</i>.</p>
+ <button class="btn acc fx" style="--d:1.3s" id="tell">Tell ${cfg.f?esc(cfg.f):'them'} 💬</button>`,s=>{
+  s.querySelector('#tell').onclick=async e=>{
+   const rl=location.href.split('#')[0]+'#'+enc('a|'+pick[0].replace(/\|/g,'')+'|'+when+'|'+(cfg.t||''));const txt=`Yes! ${cfg.t||'I'} picked ${pick[0]} on ${when} 💖\n${rl}`;
+   try{if(navigator.share){await navigator.share({text:txt});return;}}catch(x){}
+   try{await navigator.clipboard.writeText(txt);e.target.textContent='Copied, paste it to '+(cfg.f||'them')+' ✓';}catch(x){e.target.textContent=txt;}};});
+}
+
+function answer(c){
+ document.body.classList.remove('dark');vibe(V[detect(c.p)]);
+ go(`${F('A reply just arrived','✓')}<span class="big">💌</span><h1>${W('They said *yes!*')}</h1><p class="fx" style="--d:.8s;font-size:24px">${c.t?esc(c.t)+' picked':'Picked'} <i>${esc(c.p)}</i> on <i>${esc(c.d)}</i>. Start packing.</p><button class="btn acc fx" style="--d:1.2s" id="mk">Make another invite</button>`,s=>{confetti(60);s.querySelector('#mk').onclick=()=>{try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}creator();};});
+}
+/* ---------- boot ---------- */
+function boot(){const t=location.hash.slice(1),c=t&&dec(t);
+ if(c&&c.a)answer(c);else if(c&&Array.isArray(c.o)&&c.o.length)play(c,false);else creator();}
+boot();
+addEventListener('hashchange',()=>{app.innerHTML='';boot();});
+</script>
+</body>
+</html>
